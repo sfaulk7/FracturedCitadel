@@ -11,6 +11,9 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class FRACTUREDCITADEL_API UEncounterHandlerComponent : public UActorComponent
 {
 	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
+	float creditCount = 10;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
 	float emptyOdds = 30;
@@ -40,7 +43,7 @@ public:
 	// 4. healing encounter, heals
 	// The encounter number will be from 1-100 to simulate odds
 	UFUNCTION(BlueprintCallable, meta = (ALlowPrivateAccess = "true"))
-	void TriggerEncounter(float encounterNumber);
+	float TriggerEncounter(float encounterNumber);
 	
 	void EmptyEncounter();
 	void EnemyEncounter();

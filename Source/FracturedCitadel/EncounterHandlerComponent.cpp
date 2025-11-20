@@ -32,25 +32,29 @@ void UEncounterHandlerComponent::TickComponent(float DeltaTime, ELevelTick TickT
 	// ...
 }
 
-void UEncounterHandlerComponent::TriggerEncounter(float encounterNumber)
+float UEncounterHandlerComponent::TriggerEncounter(float encounterNumber)
 {
 	if (encounterNumber > 0)
 	{
 		if (encounterNumber <= emptyOdds)
 		{
 			EmptyEncounter();
+			return 1;
 		}
 		else if (encounterNumber <= emptyOdds + enemyOdds)
 		{
 			EnemyEncounter();
+			return 2;
 		}
 		else if (encounterNumber <= emptyOdds + enemyOdds + chestOdds)
 		{
 			ChestEncounter();
+			return 3;
 		}
 		else if (encounterNumber <= emptyOdds + enemyOdds + chestOdds + healingOdds)
 		{
 			HealingEncounter();
+			return 4;
 		}
 		else
 		{
@@ -67,6 +71,7 @@ void UEncounterHandlerComponent::TriggerEncounter(float encounterNumber)
 				5.0f,
 				FColor::Red,
 				"ERROR 02: Invalid encounterNumber to TriggerEncounter in EncounterHandler. (NUMBER OVER 100)");
+			return 0;
 		}
 	}
 	else
@@ -84,6 +89,7 @@ void UEncounterHandlerComponent::TriggerEncounter(float encounterNumber)
 			5.0f,
 			FColor::Red,
 			"ERROR 01: Invalid encounterNumber to TriggerEncounter in EncounterHandler (NUMBER BELOW 1)");
+		return 0;
 	}
 }
 

@@ -11,6 +11,15 @@ class AFracturedCitadelCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
+	float playerHealth = 10;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
+	float playerMaxHealth = 10;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
+	float playerSpeed = 10;
+
+
+	
 public:
 	AFracturedCitadelCharacter();
 
@@ -22,7 +31,6 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
-	
 
 private:
 	/** Top down camera */
