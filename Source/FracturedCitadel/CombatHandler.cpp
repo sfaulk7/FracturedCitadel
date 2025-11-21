@@ -3,6 +3,8 @@
 
 #include "CombatHandler.h"
 
+#include "Algo/ForEach.h"
+
 // Sets default values
 ACombatHandler::ACombatHandler()
 {
@@ -22,6 +24,10 @@ void ACombatHandler::BeginPlay()
 void ACombatHandler::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	for (size_t i = 0; i < EnemyArray.Num(); i++)
+	{
+		if (EnemyArray[i]->selected = true;)
+		
+	}
 }
 

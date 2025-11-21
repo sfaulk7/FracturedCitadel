@@ -128,3 +128,26 @@ void UEncounterHandlerComponent::HealingEncounter()
 			FColor::Green,
 			"HealingEncounter");
 }
+
+FVector2D UEncounterHandlerComponent::GetEnemySpawnDetails()
+{
+	float tempCred = creditCount/10;
+	float levelCount = 1;
+
+	while (tempCred > 5)
+	{
+		if (tempCred > 5)
+		{
+			tempCred = tempCred/10;
+			levelCount++;
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	FVector2D SpawnsAndLevels(tempCred, levelCount);
+	
+	return SpawnsAndLevels;
+}

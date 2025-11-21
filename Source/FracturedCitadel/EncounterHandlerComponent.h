@@ -49,4 +49,8 @@ public:
 	void EnemyEncounter();
 	void ChestEncounter();
 	void HealingEncounter();
+
+	//Returns a vector where X is the amount of enemies to spawn and Y is the level they will be
+	UFUNCTION(BlueprintCallable, meta = (ALlowPrivateAccess = "true"))
+	FVector2D GetEnemySpawnDetails();
 };

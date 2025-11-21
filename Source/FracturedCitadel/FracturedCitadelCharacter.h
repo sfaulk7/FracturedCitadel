@@ -12,11 +12,14 @@ class AFracturedCitadelCharacter : public ACharacter
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
-	float playerHealth = 10;
+	float playerHealth = 100;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
-	float playerMaxHealth = 10;
+	float playerMaxHealth = 100;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	float playerSpeed = 10;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
+	bool selected = false;
 
 	/** Selection Highlight Box */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))

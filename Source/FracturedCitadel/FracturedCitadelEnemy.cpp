@@ -35,3 +35,11 @@ void AFracturedCitadelEnemy::Tick(float DeltaTime)
 
 }
 
+void AFracturedCitadelEnemy::SetEnemyLevel(int level)
+{
+	//Adjust stats based on level
+	enemyMaxHealth = (enemyMaxHealth + level) * (level + (level / 2));
+	enemyHealth = enemyMaxHealth;
+	enemySpeed = enemySpeed + level;
+}
+

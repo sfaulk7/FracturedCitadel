@@ -12,11 +12,17 @@ class FRACTUREDCITADEL_API AFracturedCitadelEnemy : public AActor
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
-	float enemyHealth = 10;
+	int enemyLevel = 1;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
-	float enemyMaxHealth = 10;
+	float enemyHealth = 100;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
+	float enemyMaxHealth = 100;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	float enemySpeed = 10;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
+	bool selected = false;
 
 	/** Selection Highlight Box */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
@@ -38,5 +44,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	void SetEnemyLevel(int level);
 
 };
