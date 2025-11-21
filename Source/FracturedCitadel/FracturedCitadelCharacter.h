@@ -18,7 +18,9 @@ class AFracturedCitadelCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	float playerSpeed = 10;
 
-
+	/** Selection Highlight Box */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class UStaticMeshComponent* SelectionBox;
 	
 public:
 	AFracturedCitadelCharacter();

@@ -17,6 +17,15 @@ class FRACTUREDCITADEL_API AFracturedCitadelEnemy : public AActor
 	float enemyMaxHealth = 10;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	float enemySpeed = 10;
+
+	/** Selection Highlight Box */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class UCapsuleComponent* RootCapsule;
+	
+	/** Selection Highlight Box */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class UStaticMeshComponent* SelectionBox;
+
 	
 public:	
 	// Sets default values for this actor's properties
