@@ -16,7 +16,7 @@ class AFracturedCitadelCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	float playerMaxHealth = 100;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
-	float playerSpeed = 10;
+	float playerSpeed = 7;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	bool selected = false;

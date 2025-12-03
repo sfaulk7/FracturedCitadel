@@ -26,7 +26,10 @@ void ACombatHandler::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	for (size_t i = 0; i < EnemyArray.Num(); i++)
 	{
-		if (EnemyArray[i]->selected = true;)
+		if (EnemyArray[i]->selected == true)
+		{
+			
+		}
 		
 	}
 }
