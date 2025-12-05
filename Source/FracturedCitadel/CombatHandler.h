@@ -18,6 +18,10 @@ class FRACTUREDCITADEL_API ACombatHandler : public AActor
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
 	TArray<AFracturedCitadelEnemy*> EnemyArray;
+
+	/** Combat Camera */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* CombatCamera;
 	
 public:	
 	// Sets default values for this actor's properties

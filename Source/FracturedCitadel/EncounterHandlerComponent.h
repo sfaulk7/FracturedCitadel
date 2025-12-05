@@ -13,6 +13,12 @@ class FRACTUREDCITADEL_API UEncounterHandlerComponent : public UActorComponent
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
+	TArray<AActor*> EnemySpawnLocations;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
+	TArray<AActor*> PlayerSpawnLocations;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
 	float creditCount = 10;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
@@ -23,6 +29,30 @@ class FRACTUREDCITADEL_API UEncounterHandlerComponent : public UActorComponent
 	float chestOdds = 30;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EncounterOdds, meta = (AllowPrivateAccess = "true"));
 	float healingOdds = 10;
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EnemySpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* EnemySpawnLocation1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EnemySpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* EnemySpawnLocation2;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EnemySpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* EnemySpawnLocation3;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EnemySpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* EnemySpawnLocation4;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EnemySpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* EnemySpawnLocation5;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerSpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* PlayerSpawnLocation1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerSpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* PlayerSpawnLocation2;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerSpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* PlayerSpawnLocation3;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerSpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* PlayerSpawnLocation4;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerSpawn, meta = (AllowPrivateAccess = "true"));
+	AActor* PlayerSpawnLocation5;
+	
 	
 public:	
 	// Sets default values for this component's properties

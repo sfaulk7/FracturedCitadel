@@ -47,13 +47,13 @@ AFracturedCitadelCharacter::AFracturedCitadelCharacter()
 	SelectionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	//Create the CombatCamera
-	CombatCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("CombatCamera"));
-	CombatCamera->SetupAttachment(RootComponent);
-	FVector CombatCameraLocation = FVector(-130, 80, 100);
-	CombatCamera->SetRelativeLocation(CombatCameraLocation);
-	// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
-	FRotator CombatCameraRotation = FRotator( -10, -10, 0);
-	CombatCamera->SetRelativeRotation(CombatCameraRotation);
+	//CombatCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("CombatCamera"));
+	//CombatCamera->SetupAttachment(RootComponent);
+	//FVector CombatCameraLocation = FVector(-130, 80, 100);
+	//CombatCamera->SetRelativeLocation(CombatCameraLocation);
+	//// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
+	//FRotator CombatCameraRotation = FRotator( -10, -10, 0);
+	//CombatCamera->SetRelativeRotation(CombatCameraRotation);
 
 	//Create the SpringArm
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));

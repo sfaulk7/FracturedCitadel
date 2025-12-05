@@ -26,8 +26,8 @@ class AFracturedCitadelCharacter : public ACharacter
 	class UStaticMeshComponent* SelectionBox;
 
 	/** Combat Camera */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* CombatCamera;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	//class UCameraComponent* CombatCamera;
 
 	/** Selected Camera's Spring Arm Parent */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
