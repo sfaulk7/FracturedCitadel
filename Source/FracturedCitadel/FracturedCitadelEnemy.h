@@ -26,13 +26,21 @@ public:
 	bool selected = false;
 
 private:
-	/** Selection Highlight Box */
+	/** Root Capsule Component */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	class UCapsuleComponent* RootCapsule;
 	
 	/** Selection Highlight Box */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	class UStaticMeshComponent* SelectionBox;
+
+	/** Selected Camera's Spring Arm Parent */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class USpringArmComponent* SpringArm;
+	
+	/** Selected Camera */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* SelectedCamera;
 
 	
 public:	

@@ -42,7 +42,31 @@ AFracturedCitadelCharacter::AFracturedCitadelCharacter()
 
 	// Create a selection box...
 	SelectionBox = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SelectionBox"));
+	SelectionBox->SetupAttachment(RootComponent);
 	SelectionBox->SetHiddenInGame(true);
+	SelectionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	//Create the CombatCamera
+	CombatCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("CombatCamera"));
+	CombatCamera->SetupAttachment(RootComponent);
+	FVector CombatCameraLocation = FVector(-130, 80, 100);
+	CombatCamera->SetRelativeLocation(CombatCameraLocation);
+	// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
+	FRotator CombatCameraRotation = FRotator( -10, -10, 0);
+	CombatCamera->SetRelativeRotation(CombatCameraRotation);
+
+	//Create the SpringArm
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	SpringArm->SetupAttachment(RootComponent);
+	SpringArm->bDoCollisionTest = false;
+	SpringArm->TargetArmLength = -350;
+	
+	//Create the SelectedCamera
+	SelectedCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("SelectedCamera"));
+	// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
+	FRotator SelectedCameraRotation = FRotator( 5, 180, 0);
+	SelectedCamera->SetRelativeRotation(SelectedCameraRotation);
+	SelectedCamera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 	
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;

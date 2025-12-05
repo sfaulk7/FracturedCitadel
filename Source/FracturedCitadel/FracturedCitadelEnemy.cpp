@@ -3,7 +3,9 @@
 
 #include "FracturedCitadelEnemy.h"
 
+#include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
 AFracturedCitadelEnemy::AFracturedCitadelEnemy()
@@ -14,11 +16,26 @@ AFracturedCitadelEnemy::AFracturedCitadelEnemy()
 	// Create a selection box...
 	RootCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("RootCapsule"));
 	RootComponent = RootCapsule;
-	
 
 	// Create a selection box...
-	SelectionBox = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SelectionBox"));\
+	SelectionBox = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SelectionBox"));
+	SelectionBox->SetupAttachment(RootComponent);
 	SelectionBox->SetHiddenInGame(true);
+	SelectionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	//Create the SpringArm
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	SpringArm->SetupAttachment(RootComponent);
+	SpringArm->bDoCollisionTest = false;
+	SpringArm->TargetArmLength = -350;
+	
+	//Create the SelectedCamera
+	SelectedCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("SelectedCamera"));
+	// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
+	FRotator SelectedCameraRotation = FRotator( 5, 180, 0);
+	SelectedCamera->SetRelativeRotation(SelectedCameraRotation);
+	SelectedCamera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
+	
 }
 
 // Called when the game starts or when spawned
