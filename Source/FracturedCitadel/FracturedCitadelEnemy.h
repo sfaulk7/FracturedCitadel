@@ -20,7 +20,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	float enemyMaxHealth = 100;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
-	float enemySpeed = 5;
+	float enemySpeed = 10;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats, meta = (AllowPrivateAccess = "true"));
 	bool selected = false;
