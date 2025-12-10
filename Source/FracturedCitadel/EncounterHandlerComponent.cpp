@@ -13,18 +13,18 @@ UEncounterHandlerComponent::UEncounterHandlerComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	// Enemy Spawn Locations
-	EnemySpawnLocations.Add(EnemySpawnLocation1);
-	EnemySpawnLocations.Add(EnemySpawnLocation2);
-	EnemySpawnLocations.Add(EnemySpawnLocation3);
-	EnemySpawnLocations.Add(EnemySpawnLocation4);
-	EnemySpawnLocations.Add(EnemySpawnLocation5);
+	//EnemySpawnLocations.Add(EnemySpawnLocation1);
+	//EnemySpawnLocations.Add(EnemySpawnLocation2);
+	//EnemySpawnLocations.Add(EnemySpawnLocation3);
+	//EnemySpawnLocations.Add(EnemySpawnLocation4);
+	//EnemySpawnLocations.Add(EnemySpawnLocation5);
 
 	// Player Spawn Locations
-	PlayerSpawnLocations.Add(PlayerSpawnLocation1);
-	PlayerSpawnLocations.Add(PlayerSpawnLocation2);
-	PlayerSpawnLocations.Add(PlayerSpawnLocation3);
-	PlayerSpawnLocations.Add(PlayerSpawnLocation4);
-	PlayerSpawnLocations.Add(PlayerSpawnLocation5);
+	//PlayerSpawnLocations.Add(PlayerSpawnLocation1);
+	//PlayerSpawnLocations.Add(PlayerSpawnLocation2);
+	//PlayerSpawnLocations.Add(PlayerSpawnLocation3);
+	//PlayerSpawnLocations.Add(PlayerSpawnLocation4);
+	//PlayerSpawnLocations.Add(PlayerSpawnLocation5);
 }
 
 
