@@ -34,13 +34,21 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	class UStaticMeshComponent* SelectionBox;
 
-	/** Selected Camera's Spring Arm Parent */
+	/** Attacked Camera's Attacked Arm Parent */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* SpringArm;
+	class USpringArmComponent* AttackedSpringArm;
 	
-	/** Selected Camera */
+	/** Attacked Camera */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* SelectedCamera;
+	class UCameraComponent* AttackedCamera;
+
+	/** Aiming Camera's Aiming Arm Parent */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class USpringArmComponent* AimingSpringArm;
+
+	/** Aiming Camera */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* AimingCamera;
 
 	
 public:	

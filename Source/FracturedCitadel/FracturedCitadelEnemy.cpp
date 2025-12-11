@@ -23,18 +23,31 @@ AFracturedCitadelEnemy::AFracturedCitadelEnemy()
 	SelectionBox->SetHiddenInGame(true);
 	SelectionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
-	//Create the SpringArm
-	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
-	SpringArm->SetupAttachment(RootComponent);
-	SpringArm->bDoCollisionTest = false;
-	SpringArm->TargetArmLength = -350;
+	//Create the AttackedSpringArm
+	AttackedSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("AttackedSpringArm"));
+	AttackedSpringArm->SetupAttachment(RootComponent);
+	AttackedSpringArm->bDoCollisionTest = false;
+	AttackedSpringArm->TargetArmLength = -350;
 	
 	//Create the SelectedCamera
-	SelectedCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("SelectedCamera"));
+	AttackedCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("AttackedCamera"));
 	// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
-	FRotator SelectedCameraRotation = FRotator( 5, 180, 0);
-	SelectedCamera->SetRelativeRotation(SelectedCameraRotation);
-	SelectedCamera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
+	FRotator AttackedCameraRotation = FRotator( 5, 180, 0);
+	AttackedCamera->SetRelativeRotation(AttackedCameraRotation);
+	AttackedCamera->SetupAttachment(AttackedSpringArm, USpringArmComponent::SocketName);
+
+	//Create the Aiming SpringArm
+	AimingSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("AimingSpringArm"));
+	AimingSpringArm->SetupAttachment(RootComponent);
+	AimingSpringArm->bDoCollisionTest = false;
+	AimingSpringArm->TargetArmLength = -350;
+	
+	//Create the AimingCamera
+	AimingCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("AimingCamera"));
+	// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
+	FRotator AimingCameraRotation = FRotator( 5, 180, 0);
+	AimingCamera->SetRelativeRotation(AimingCameraRotation);
+	AimingCamera->SetupAttachment(AimingSpringArm, USpringArmComponent::SocketName);
 	
 }
 
