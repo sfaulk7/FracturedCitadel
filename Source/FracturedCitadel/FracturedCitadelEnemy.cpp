@@ -40,12 +40,14 @@ AFracturedCitadelEnemy::AFracturedCitadelEnemy()
 	AimingSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("AimingSpringArm"));
 	AimingSpringArm->SetupAttachment(RootComponent);
 	AimingSpringArm->bDoCollisionTest = false;
-	AimingSpringArm->TargetArmLength = -350;
+	AimingSpringArm->TargetArmLength = 25;
 	
 	//Create the AimingCamera
 	AimingCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("AimingCamera"));
+	FVector AimingCameraLocation = FVector(5, 55, 75);
 	// In blueprint (for some reason) this is different, instead of Pitch, Yaw, Roll, Blueprint has Roll, Pitch, Yaw 
-	FRotator AimingCameraRotation = FRotator( 5, 180, 0);
+	FRotator AimingCameraRotation = FRotator( -5, -10, 0);
+	AimingCamera->SetRelativeLocation(AimingCameraLocation);
 	AimingCamera->SetRelativeRotation(AimingCameraRotation);
 	AimingCamera->SetupAttachment(AimingSpringArm, USpringArmComponent::SocketName);
 	
